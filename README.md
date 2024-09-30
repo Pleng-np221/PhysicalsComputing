@@ -1,4 +1,5 @@
-# PhysicalsComputing
+# Physical Computing Project 2024 - IT KMITL
+
 สมาชิกผู้จัดทำ
 |ชื่อ | นามสกุล	| รหัสนักศึกษา|
 |---|---|---|
