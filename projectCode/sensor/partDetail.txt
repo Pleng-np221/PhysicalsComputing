@@ -1,0 +1,4 @@
+Grove Gas Sensor (MQ2)	ต่อ A0
+Temperature Sensor	ต่อ A1
+Flame Sensor		ต่อ 7
+Solenoid Pump		ต่อ 13
