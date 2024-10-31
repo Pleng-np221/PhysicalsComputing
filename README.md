@@ -15,7 +15,7 @@
 | 2 | Buzzer | <img src="https://github.com/user-attachments/assets/5f26151b-f50c-4a10-a3a3-21097e944af2" width="150"> |
 | 3 | โมดูลตรวจจับแก๊สและควัน MQ-2 | <img src="https://github.com/user-attachments/assets/523f801a-303c-47c0-8edd-86b386b5b160" width="150"> |
 | 4 | จอแสดงผล LCD 1602 with I2C| <img src="https://github.com/user-attachments/assets/2d742761-4099-4149-b79d-81e7b659ae2f" width="150"> |
-| 5 | เซนเซอร์วัดอุณหภูมิ temperature sensor mcp9700| <img src="https://github.com/user-attachments/assets/ce5b2b04-ab24-4383-8c47-a696f88cfa8c" width="150"> |
+| 5 | เซนเซอร์วัดอุณหภูมิ temperature sensor mcp9700| <img src="https://static.cytron.io/image/cache/catalog/products/SN-MCP-9700/SN-MCP-9700-800x800.jpg" width="150"> |
 | 6 | เซนเซอร์ตรวจจับเปลวไฟ Flame Sensor | <img src="https://github.com/user-attachments/assets/17c710fd-9b8f-4df8-9fdd-39218fa45f41" width="150"> |
 | 7 | เซนเซอร์วัดระดับน้ำ Analog Water Sensor (ยังไม่ได้ใช้งาน) | <img src="https://github.com/user-attachments/assets/946633b0-3ee1-4058-8651-583a638fbdd4" width="150"> |
 | 8 | Solenoid Valve 12VDC | <img src="https://github.com/user-attachments/assets/a6fe049a-51a2-4162-8c12-686f2713844a" width="150"> |
