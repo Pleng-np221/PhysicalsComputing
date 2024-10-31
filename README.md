@@ -11,10 +11,31 @@
 | 2 | Buzzer | <img src="https://github.com/user-attachments/assets/5f26151b-f50c-4a10-a3a3-21097e944af2" width="150"> |
 | 3 | โมดูลตรวจจับแก๊สและควัน MQ-2 | <img src="https://github.com/user-attachments/assets/523f801a-303c-47c0-8edd-86b386b5b160" width="150"> |
 | 4 | LCD 1602 จอแสดงข้อความ | <img src="https://github.com/user-attachments/assets/2d742761-4099-4149-b79d-81e7b659ae2f" width="150"> |
-| 5 | OLED I2C SH1106 | <img src="https://github.com/user-attachments/assets/ce5b2b04-ab24-4383-8c47-a696f88cfa8c" width="150"> |
+| 5 | OLED I2C SH1106 (ยังไม่ได้ใช้งาน)| <img src="https://github.com/user-attachments/assets/ce5b2b04-ab24-4383-8c47-a696f88cfa8c" width="150"> |
 | 6 | เซนเซอร์ตรวจจับเปลวไฟ Flame Sensor | <img src="https://github.com/user-attachments/assets/17c710fd-9b8f-4df8-9fdd-39218fa45f41" width="150"> |
 | 7 | เซนเซอร์วัดระดับน้ำ Analog Water Sensor (ยังไม่ได้ใช้งาน) | <img src="https://github.com/user-attachments/assets/946633b0-3ee1-4058-8651-583a638fbdd4" width="150"> |
 | 8 | Solenoid Valve 12VDC | <img src="https://github.com/user-attachments/assets/a6fe049a-51a2-4162-8c12-686f2713844a" width="150"> |
+
+# **ขั้นตอนการทำ**
+1. **เตรียมอุปกรณ์**: Arduino, MQ-2 gas sensor, flame sensor, temperature sensor, Buzzer, solenoid valve, LED Matrix, Wi-Fi module, และสายไฟ
+
+2. **การต่อวงจร**:
+   - เชื่อมต่อเซนเซอร์กับ Arduino ตามขาที่กำหนด
+   - เชื่อมต่อ Buzzer และปั๊มน้ำ
+   - เชื่อมต่อ LED Matrix และ Wi-Fi module
+
+3. **เขียนโค้ด**: ใช้โค้ดสำหรับตรวจสอบสถานะเซนเซอร์ ควบคุมปั๊มน้ำ และส่งข้อความผ่าน Telegram
+
+4. **ทดสอบระบบ**: ตรวจสอบการเชื่อมต่อ อัพโหลดโค้ด และทดสอบการทำงานในสภาพแวดล้อมที่แตกต่างกัน
+
+5. **ตรวจสอบผลลัพธ์**: ดูการแสดงผลบน LED Matrix และเสียงจาก Buzzer รวมถึงข้อความที่ส่งผ่าน Telegram
+
+6. **การปรับปรุง**: ปรับค่าและตรวจสอบค่าต่าง ๆ เพื่อเพิ่มประสิทธิภาพของระบบ
+
+# **INPUT OUTPUT**
+- **Input**: ข้อมูล Wi-Fi (ชื่อ Wi-Fi และรหัสผ่าน), ข้อมูล Telegram (token ของบอทและ chat ID), ค่าสัญญาณจากเซนเซอร์ตรวจจับแก๊ส (MQ-2), อุณหภูมิจากเซนเซอร์วัดอุณหภูมิ, และค่าสัญญาณจากเซนเซอร์ตรวจจับเปลวไฟ เพื่อนำไปตรวจสอบสถานะสภาพแวดล้อม เช่น การมีเปลวไฟ อุณหภูมิสูง หรือแก๊สรั่ว
+
+- **Output**:  การแสดงภาพบน LED matrix, เสียงแจ้งเตือนผ่าน Buzzer, การทำงานของปั๊มน้ำ, และการส่งข้อความแจ้งเตือนผ่าน Telegram เพื่อแจ้งเตือนสถานะของระบบตามข้อมูลที่ตรวจพบ
 
 # สมาชิกผู้จัดทำ
 |ชื่อ | นามสกุล	| รหัสนักศึกษา|
