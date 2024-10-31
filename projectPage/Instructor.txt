@@ -1,0 +1,18 @@
+ctrl+f เปลี่ยนตรงนี้นะ
+
+รูปงาน 2 อัน
+ไฟล์ index.html
+project1.png
+ไฟล์ index.css
+project2.png
+
+รูปอุปกรณ์ ไฟล์ index.html
+MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg
+
+รูปสมาชิก ไฟล์ index.html
+images/VbAEHv3ZpU=.jpeg
+
+ลิ้งค์วิดีโอ
+https://www.youtube.com/embed/L-hm3S1aSnI?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0
+ลิ้งค์ไปหน้าโค้ด
+href="https://github.com/Pleng-np221/PhysicalsComputing" target="_blank">Code</a>
