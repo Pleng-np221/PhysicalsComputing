@@ -1,3 +1,4 @@
+// Wifi Telegram setup
 #include <WiFi.h>
 #include <WiFiSSLClient.h>
 
@@ -8,6 +9,12 @@ const char* telegramBotToken = "8121376124:AAH9M41wg_qjkMlj77Z8FjYU_KIyY_ljB-8";
 const char* chatId = "5912496981";                // Replace with your chat ID
 
 WiFiSSLClient wifiClient; // Create a secure WiFiSSLClient object
+
+// LCD display setup
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
+
 #define         MQ_PIN                       (0)
 #define         TEMP_PIN                     (1)
 #define         FLAME_PIN                    (7)
@@ -52,7 +59,7 @@ void setup()
   pinMode(FLAME_PIN, INPUT);
   pinMode(PUMP_PIN, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
-  Serial.begin(9600);                               //UART setup, baudrate = 9600bps
+  Serial.begin(9600);
 
   Serial.print("Calibrating...\n");
   Ro = MQCalibration(MQ_PIN);                       //Calibrating the sensor. Please make sure the sensor is in clean air

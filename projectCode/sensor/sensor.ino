@@ -1,7 +1,28 @@
+// // Wifi Telegram setup
+// #include <WiFi.h>
+// #include <WiFiSSLClient.h>
+
+// const char* ssid = "amAUN";                // Replace with your Wi-Fi SSID
+// const char* password = "aunaunaun";        // Replace with your Wi-Fi password
+
+// const char* telegramBotToken = "8121376124:AAH9M41wg_qjkMlj77Z8FjYU_KIyY_ljB-8"; // Replace with your Telegram bot token
+// const char* chatId = "5912496981";                // Replace with your chat ID
+
+// WiFiSSLClient wifiClient; // Create a secure WiFiSSLClient object
+
+// LCD display setup
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
+
 #define         MQ_PIN                       (0)
 #define         TEMP_PIN                     (1)
 #define         FLAME_PIN                    (7)
-#define         PUMP_PIN                     (13)
+#define         BUZZER_PIN                   (8)
+#define         PUMP_PIN                     (2)
+
+#define         BUZZER_SOUND                 (1319)
+#define         BUZZER_DELAY                 (5000)
 
 #define         RL_VALUE                     (5)     //define the load resistance on the board, in kilo ohms
 #define         RO_CLEAN_AIR_FACTOR          (9.83)  //RO_CLEAR_AIR_FACTOR=(Sensor resistance in clean air)/RO,
@@ -19,75 +40,120 @@
 #define         GAS_SMOKE                    (2)
 
 /*****************************Globals***********************************************/
-float LPGCurve[3]  =  {2.3, 0.21, -0.47}; //two points are taken from the curve.
+//two points are taken from the curve.
 //with these two points, a line is formed which is "approximately equivalent"
 //to the original curve.
+float LPGCurve[3]  =  {2.3, 0.21, -0.47};
 //data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
-float COCurve[3]  =  {2.3, 0.72, -0.34};  //two points are taken from the curve.
-//with these two points, a line is formed which is "approximately equivalent"
-//to the original curve.
+float COCurve[3]  =  {2.3, 0.72, -0.34};
 //data format:{ x, y, slope}; point1: (lg200, 0.72), point2: (lg10000,  0.15)
-float SmokeCurve[3] = {2.3, 0.53, -0.44}; //two points are taken from the curve.
-//with these two points, a line is formed which is "approximately equivalent"
-//to the original curve.
+float SmokeCurve[3] = {2.3, 0.53, -0.44};
 //data format:{ x, y, slope}; point1: (lg200, 0.53), point2: (lg10000,  -0.22)
 float Ro =  10; //Ro is initialized to 10 kilo ohms
 
 //flameSensor
 int flameState = 0;
 
+//test
+int testValue = 0;
+
 void setup()
 {
   pinMode(FLAME_PIN, INPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
   pinMode(PUMP_PIN, OUTPUT);
-  Serial.begin(9600);                               //UART setup, baudrate = 9600bps
+  digitalWrite(PUMP_PIN, LOW);
+  Serial.begin(9600);
 
-  Serial.print("Calibrating...\n");
+  lcd.begin();
+  lcd.backlight();
+
+  displayLCD("Calibrating...\n");
+
   Ro = MQCalibration(MQ_PIN);                       //Calibrating the sensor. Please make sure the sensor is in clean air
   //when you perform the calibration
-  Serial.print("Calibration is done...\n");
-  Serial.print("Ro=");
-  Serial.print(Ro);
-  Serial.print("kohm");
-  Serial.print("\n");
+  String RoText = "Ro="+String(Ro)+"kohm";
+  displayLCD("Calibration done...\n", RoText);
+  
+  // // Connect to Wi-Fi
+  //   WiFi.begin(ssid, password);
+  //   Serial.println("");
+  //   Serial.print("Connecting to WiFi");
+  //   while (WiFi.status() != WL_CONNECTED) {
+  //       Serial.print(".");
+  //       delay(500);
+  //   }
+  //   Serial.println("\nConnected to WiFi");
+  //   Serial.print("IP Address: ");
+  //   Serial.println(WiFi.localIP());
 }
 
 void loop()
 {
+  //test
+  if (testValue==0) {
+    delay(5000);
+    testValue = 1;
+    Serial.println("---------------------Testing ON---------------------");
+  } else {
+    delay(5000);
+    testValue = 0;
+    Serial.println("---------------------Testing OFF---------------------");
+  }
+
   flameState = digitalRead(FLAME_PIN);
 
-  if (flameState == HIGH) {
+  if ((flameState == HIGH) || (testValue==0)) {
     Serial.println("No flame detected");
     turnOffPump(100);
   } else {
-    Serial.println("Flame detected");
+    //put alert here
+    tone(BUZZER_PIN, BUZZER_SOUND, BUZZER_DELAY);
+    delay(500);
+    displayLCD("Flame detected!!!");
     turnOnPump(100);
+    // sendTelegramMessage("FIRE DETECTED!");
   }
 
   float LPGppm = MQGetGasPercentage(MQRead(MQ_PIN) / Ro, GAS_LPG);
   float COppm = MQGetGasPercentage(MQRead(MQ_PIN) / Ro, GAS_CO);
   float SMOKEppm = MQGetGasPercentage(MQRead(MQ_PIN) / Ro, GAS_SMOKE);
 
-  if ((LPGppm>=1000)||(COppm>=70)||(SMOKEppm>=10)) {
+  if ((LPGppm>=1000)||(COppm>=70)||(SMOKEppm>=10)||(testValue==1)) {
+    //put alert here
+    tone(BUZZER_PIN, BUZZER_SOUND, BUZZER_DELAY);
+    delay(500);
     turnOnPump(1000);
+    // sendTelegramMessage("HIGH GAS DETECTED!");
+    // String alarmMessage = "LPG: " + String(LPGppm) + " ppm  CO: " + String(COppm) + " ppm  SMOKE: " + String(SMOKEppm) + " ppm";
+    // sendTelegramMessage(alarmMessage);
   } else {
     turnOffPump(1000);
   }
-
-  Serial.print("LPG: ");
-  Serial.print(LPGppm);
-  Serial.print(" ppm  CO: ");
-  Serial.print(COppm);
-  Serial.print(" ppm  SMOKE: ");
-  Serial.print(SMOKEppm);
-  Serial.println(" ppm");
+  // Serial.print("LPG: ");
+  // Serial.print(LPGppm);
+  // Serial.print(" ppm  CO: ");
+  // Serial.print(COppm);
+  // Serial.print(" ppm  SMOKE: ");
+  // Serial.print(SMOKEppm);
+  // Serial.println(" ppm");
 
   int sensorValue = analogRead(TEMP_PIN);
   float voltage = sensorValue * (5.0 / 1023.0); // แปลงค่า Analog เป็น Voltage
   float temperatureC = (voltage * 100 - 32) * 5 / 9; // แปลง Voltage เป็น อุณหภูมิ (Celsius)
   
-  if (temperatureC >= 70) {
+  String displayG0 = "LPG"+String(LPGppm)+" CO"+String(COppm);
+  String displayG1 = "SMOKE"+String(SMOKEppm)+" " + String(temperatureC)+"C";
+  displayLCD(displayG0, displayG1);
+  
+  if ((temperatureC >= 70)||(testValue==1)) {
+    //put alert here
+    tone(BUZZER_PIN, BUZZER_SOUND, BUZZER_DELAY);
+    delay(500);
     turnOnPump(1000);
+    // sendTelegramMessage("HIGH TEMPERATURE DETECTED!");
+    // String alarmMessage = "Temperature: " + String(temperatureC);
+    // sendTelegramMessage(alarmMessage);
   } else {
     turnOffPump(1000);
   }
@@ -99,10 +165,29 @@ void loop()
   delay(3000);
   
 }
+void displayLCD(String first, String second){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(first);
+  lcd.setCursor(0, 1);
+  lcd.print(second);
+
+  Serial.println(first);
+  Serial.println(second);
+}
+void displayLCD(String first){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(first);
+  lcd.setCursor(0, 1);
+  lcd.print("");
+
+  Serial.println(first);
+}
 
 void turnOnPump(float delayTime)
 {
-  Serial.println("Turning pump ON");
+  displayLCD("Pump ON!!!");
   digitalWrite(PUMP_PIN, HIGH);
   delay(delayTime);
 }
@@ -166,3 +251,27 @@ int  MQGetPercentage(float rs_ro_ratio, float *pcurve)
 {
   return (pow(10, ( ((log(rs_ro_ratio) - pcurve[1]) / pcurve[2]) + pcurve[0])));
 }
+// void sendTelegramMessage(const String& message) {
+//     // Format the Telegram API URL
+//     String url = "/bot" + String(telegramBotToken) + "/sendMessage?chat_id=" + String(chatId) + "&text=" + message;
+
+//     // Connect to Telegram server
+//     if (wifiClient.connect("api.telegram.org", 443)) {
+//         // Send the GET request
+//         wifiClient.print(String("GET ") + url + " HTTP/1.1\r\n" +
+//                          "Host: api.telegram.org\r\n" +
+//                          "Connection: close\r\n\r\n");
+
+//         // Wait for response
+//         while (wifiClient.connected() || wifiClient.available()) {
+//             if (wifiClient.available()) {
+//                 String response = wifiClient.readStringUntil('\n');
+//                 Serial.println(response);
+//             }
+//         }
+
+//         wifiClient.stop();
+//     } else {
+//         Serial.println("Connection failed");
+//     }
+// }
