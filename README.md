@@ -14,11 +14,13 @@
 | 1 | Arduino® UNO R4 WiFi| <img src="https://github.com/user-attachments/assets/18c37a8a-e643-49c5-b1ca-4a1c482f3752" width="150"> |
 | 2 | Buzzer | <img src="https://github.com/user-attachments/assets/5f26151b-f50c-4a10-a3a3-21097e944af2" width="150"> |
 | 3 | โมดูลตรวจจับแก๊สและควัน MQ-2 | <img src="https://github.com/user-attachments/assets/523f801a-303c-47c0-8edd-86b386b5b160" width="150"> |
-| 4 | จอแสดงผล LCD 1602 with I2C| <img src="https://github.com/user-attachments/assets/2d742761-4099-4149-b79d-81e7b659ae2f" width="150"> |
+| 4 | จอแสดงผล LCD 1602 with I2C| <img src="https://makerzone.com.au/wp-content/uploads/2021/12/1602-lcd-green-2.jpg" width="150"> |
 | 5 | เซนเซอร์วัดอุณหภูมิ temperature sensor mcp9700| <img src="https://static.cytron.io/image/cache/catalog/products/SN-MCP-9700/SN-MCP-9700-800x800.jpg" width="150"> |
 | 6 | เซนเซอร์ตรวจจับเปลวไฟ Flame Sensor | <img src="https://github.com/user-attachments/assets/17c710fd-9b8f-4df8-9fdd-39218fa45f41" width="150"> |
-| 7 | เซนเซอร์วัดระดับน้ำ Analog Water Sensor (ยังไม่ได้ใช้งาน) | <img src="https://github.com/user-attachments/assets/946633b0-3ee1-4058-8651-583a638fbdd4" width="150"> |
-| 8 | Solenoid Valve 12VDC | <img src="https://github.com/user-attachments/assets/a6fe049a-51a2-4162-8c12-686f2713844a" width="150"> |
+| 7 | Solenoid Valve 5VDC | <img src="https://down-th.img.susercontent.com/file/1f6519d59e3463fcb6b7494d4784cb1d@resize_w450_nl.webp" width="150"> |
+| 8 | Relay Module 5V | <img src="https://fa.lnwfile.com/_/fa/_raw/7f/2a/c3.jpg" width="150"> |
+| 9 | Power Supply - Battery| <img src="https://eclats-antivols.fr/28767-large_default/2-battery-ultrafire-37v-4200mah-18650-rechargeable-liion-3a-flashlight-tled3wz.jpg" width="150"> |
+| 10 | Battery Case| <img src="https://diyables.io/images/products/4-aa-battery-holder-battery-storage-case-with-wire-lead-4-x-1.5v-6v.jpg" width="150"> |
 
 # **ขั้นตอนการทำ**
 1. **เตรียมอุปกรณ์**: Arduino, MQ-2 gas sensor, flame sensor, temperature sensor, Buzzer, solenoid valve, LED Matrix, Wi-Fi module, และสายไฟ
