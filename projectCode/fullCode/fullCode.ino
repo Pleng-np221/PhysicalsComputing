@@ -54,9 +54,6 @@ float Ro =  10; //Ro is initialized to 10 kilo ohms
 //flameSensor
 int flameState = 0;
 
-//test
-int testValue = 0;
-
 void setup()
 {
   pinMode(FLAME_PIN, INPUT);
@@ -90,20 +87,9 @@ void setup()
 
 void loop()
 {
-  //test
-  if (testValue==0) {
-    delay(5000);
-    testValue = 1;
-    Serial.println("---------------------Testing ON---------------------");
-  } else {
-    delay(5000);
-    testValue = 0;
-    Serial.println("---------------------Testing OFF---------------------");
-  }
-
   flameState = digitalRead(FLAME_PIN);
 
-  if ((flameState == HIGH) || (testValue==0)) {
+  if ((flameState == HIGH)) {
     Serial.println("No flame detected");
     turnOffPump(100);
   } else {
@@ -119,7 +105,7 @@ void loop()
   float COppm = MQGetGasPercentage(MQRead(MQ_PIN) / Ro, GAS_CO);
   float SMOKEppm = MQGetGasPercentage(MQRead(MQ_PIN) / Ro, GAS_SMOKE);
 
-  if ((LPGppm>=1000)||(COppm>=70)||(SMOKEppm>=10)||(testValue==1)) {
+  if ((LPGppm>=1000)||(COppm>=70)||(SMOKEppm>=10)) {
     //put alert here
     tone(BUZZER_PIN, BUZZER_SOUND, BUZZER_DELAY);
     delay(500);
@@ -146,7 +132,7 @@ void loop()
   String displayG1 = "SMOKE"+String(SMOKEppm)+" " + String(temperatureC)+"C";
   displayLCD(displayG0, displayG1);
   
-  if ((temperatureC >= 70)||(testValue==1)) {
+  if ((temperatureC >= 70)) {
     //put alert here
     tone(BUZZER_PIN, BUZZER_SOUND, BUZZER_DELAY);
     delay(500);
