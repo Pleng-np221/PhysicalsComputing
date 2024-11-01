@@ -69,21 +69,61 @@
       <a href="https://github.com/Pleng-np221/PhysicalsComputing" class="u-active-white u-align-center u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-white u-none u-radius-50 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" target="_blank">GitHub Page </a>
     </section>
     <section class="u-clearfix u-palette-1-dark-2 u-section-2" id="description">
-      <div class="custom-expanded data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <h2 class="u-align-center u-custom-font u-text u-text-white u-text-1"> รายละเอียดโครงงาน</h2>
-                <div class="u-container-style u-gradient u-group u-radius u-shape-round u-group-1">
-                  <div class="u-container-layout u-valign-top u-container-layout-2">
-                    <p class="u-align-center u-text u-text-default u-text-2">details</p>
+      <div style="margin-bottom: 100px;">
+                <div style="text-align: center; margin: 50px 50px;">
+                  <h2>รายละเอียดโครงงาน</h2>
+                  <div class="u-container-style u-gradient u-group u-radius u-shape-round u-group-1">
+                    <div class="u-container-layout u-valign-top u-container-layout-2">
+                      <p class="u-align-center u-text u-text-default u-text-3">
+                        โครงงานนี้เป็นการใช้ไมโครคอนโทรลเลอร์ในการพัฒนาระบบตรวจจับแก๊สและเปลวไฟ โดยมีวัตถุประสงค์เพื่อสร้างระบบที่สามารถตรวจสอบสภาพแวดล้อมและแจ้งเตือนผู้ใช้เมื่อมีแก๊สหรือลุกไหม้เกิดขึ้น ระบบประกอบด้วยเซนเซอร์ตรวจจับแก๊ส MQ-2, เซนเซอร์ตรวจจับเปลวไฟ, และเซนเซอร์วัดอุณหภูมิ รวมถึง Buzzer สำหรับเสียงเตือน และ LED Matrix สำหรับการแสดงผล
+                        <br><br>
+                        ระบบทำงานโดยการรับข้อมูลจากเซนเซอร์ต่าง ๆ เพื่อตรวจสอบระดับแก๊สและการเกิดเปลวไฟ หากมีการตรวจพบอันตราย ระบบจะส่งเสียงเตือนผ่าน Buzzer พร้อมกับแสดงสถานะบน LED Matrix นอกจากนี้ยังมีการส่งข้อความแจ้งเตือนผ่าน Telegram เพื่อให้ผู้ใช้ได้รับข้อมูลในทันที
+                        <br><br>
+                        โครงงานนี้ไม่เพียงแต่ช่วยเพิ่มความปลอดภัยในสภาพแวดล้อมที่มีความเสี่ยงต่อการเกิดอุบัติเหตุจากแก๊สหรือเปลวไฟ แต่ยังเป็นการฝึกทักษะด้านการเขียนโปรแกรมและการทำงานร่วมกับฮาร์ดแวร์ของไมโครคอนโทรลเลอร์อีกด้วย
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                  <div style="text-align: center; margin: 50px 50px;">
+                    <h2>ขั้นตอนการทำ</h2>
+                    <div class="u-container-style u-gradient u-group u-radius u-shape-round u-group-1">
+                      <div class="u-container-layout u-valign-top u-container-layout-2">
+                        <p class="u-align-left u-text u-text-default u-text-3">
+                          1.เตรียมอุปกรณ์: Arduino, MQ-2 gas sensor, flame sensor, temperature sensor, Buzzer, solenoid valve, LED Matrix, Wi-Fi module, และสายไฟ
+                          <br><br>
+                          2.การต่อวงจร:
+                          <br>
+                          - เชื่อมต่อเซนเซอร์กับ Arduino ตามขาที่กำหนด
+                          <br>
+                          - เชื่อมต่อ Buzzer และปั๊มน้ำ
+                          <br>
+                          - เชื่อมต่อ LED Matrix และ Wi-Fi module
+                          <br><br>
+                          3.เขียนโค้ด: ใช้โค้ดสำหรับตรวจสอบสถานะเซนเซอร์ ควบคุมปั๊มน้ำ และส่งข้อความผ่าน Telegram
+                          <br><br>
+                          4.ทดสอบระบบ: ตรวจสอบการเชื่อมต่อ อัพโหลดโค้ด และทดสอบการทำงานในสภาพแวดล้อมที่แตกต่างกัน
+                          <br><br>
+                          5.ตรวจสอบผลลัพธ์: ดูการแสดงผลบน LED Matrix และเสียงจาก Buzzer รวมถึงข้อความที่ส่งผ่าน Telegram
+                          <br><br>
+                          6.การปรับปรุง: ปรับค่าและตรวจสอบค่าต่าง ๆ เพื่อเพิ่มประสิทธิภาพของระบบ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: center; margin: 50px 50px;">
+                    <h2>INPUT OUTPUT</h2>
+                    <div class="u-container-style u-gradient u-group u-radius u-shape-round u-group-1">
+                      <div class="u-container-layout u-valign-top u-container-layout-2">
+                        <p class="u-align-left u-text u-text-default u-text-3">
+                          <b>Input:</b> ข้อมูล Wi-Fi (ชื่อ Wi-Fi และรหัสผ่าน), ข้อมูล Telegram (token ของบอทและ chat ID), ค่าสัญญาณจากเซนเซอร์ตรวจจับแก๊ส (MQ-2), อุณหภูมิจากเซนเซอร์วัดอุณหภูมิ, และค่าสัญญาณจากเซนเซอร์ตรวจจับเปลวไฟ เพื่อนำไปตรวจสอบสถานะสภาพแวดล้อม เช่น การมีเปลวไฟ อุณหภูมิสูง หรือแก๊สรั่ว
+                          <br><br>
+                          <b>Output:</b> การแสดงภาพบน LED matrix, เสียงแจ้งเตือนผ่าน Buzzer, การทำงานของปั๊มน้ำ, และการส่งข้อความแจ้งเตือนผ่าน Telegram เพื่อแจ้งเตือนสถานะของระบบตามข้อมูลที่ตรวจพบ
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="400" data-image-height="265">
-              <div class="u-container-layout u-valign-middle u-container-layout-3"></div>
             </div>
           </div>
         </div>
@@ -100,26 +140,26 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-border-5 u-border-palette-1-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-                <h4 class="u-text u-text-2">NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-1" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-2">Arduino® UNO R4 WiFi</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-1" src="images/equipments/board.jpg" alt="Arduino® UNO R4 WiFi" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-1-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-                <h4 class="u-text u-text-3"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-2" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-3">Buzzer</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-2" src="images/equipments/buzzer.jpg" alt="Buzzer" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-1-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
-                <h4 class="u-text u-text-4"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-3" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-4">โมดูลตรวจจับแก๊สและควัน MQ-2</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-3" src="images/equipments/MQ_2.jpg" alt="โมดูลตรวจจับแก๊สและควัน MQ-2" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-1-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
-                <h4 class="u-text u-text-5"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-4" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-5">จอแสดงผล LCD 1602 with I2C</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-4" src="images/equipments/lcd.jpg" alt="จอแสดงผล LCD 1602 with I2C" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
           </div>
@@ -128,26 +168,38 @@
           <div class="u-repeater u-repeater-2">
             <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-list-item-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-6">
-                <h4 class="u-text u-text-6">NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-5" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-6">เซนเซอร์วัดอุณหภูมิ temperature sensor mcp9700</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-5" src="images/equipments/temperture.jpg" alt="เซนเซอร์วัดอุณหภูมิ temperature sensor mcp9700" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-6" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-7">
-                <h4 class="u-text u-text-7"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-6" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-7">เซนเซอร์ตรวจจับเปลวไฟ Flame Sensor</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-6" src="images/equipments/flame_sensor.jpg" alt="เซนเซอร์ตรวจจับเปลวไฟ Flame Sensor" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-7" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-8">
-                <h4 class="u-text u-text-8"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-7" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-8">Relay Module 5V</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-7" src="images/equipments/relay.jpg" alt="Relay Module 5V" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
             <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-9">
-                <h4 class="u-text u-text-9"> NAME</h4>
-                <img class="u-expanded-width u-image u-image-round u-radius u-image-8" src="images/MpnB+Gxbg1Rcq2QyBOhUtqGGOa8VbR68g==.jpeg" alt="" data-image-width="1500" data-image-height="1000">
+                <h4 class="u-text u-text-9">Solenoid Valve 12VDC</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-8" src="images/equipments/valve.webp" alt="Solenoid Valve 5VDC" data-image-width="1500" data-image-height="1000">
+              </div>
+            </div>
+            <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-9">
+                <h4 class="u-text u-text-9">Power Supply - Battery</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-8" src="images/equipments/battery.jpg" alt="Power Supply - Battery" data-image-width="1500" data-image-height="1000">
+              </div>
+            </div>
+            <div class="u-align-center u-border-5 u-border-palette-4-light-1 u-container-align-center u-container-style u-list-item u-palette-5-dark-3 u-radius-32 u-repeater-item u-shape-round u-video-cover u-list-item-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-9">
+                <h4 class="u-text u-text-9">Battery Case</h4>
+                <img class="u-expanded-width u-image u-image-round u-radius u-image-8" src="images/equipments/case.jpg" alt="Battery Case" data-image-width="1500" data-image-height="1000">
               </div>
             </div>
           </div>
@@ -169,19 +221,6 @@
       <div class="u-container-style u-expanded-width u-group u-palette-1-dark-2 u-group-1">
         <div class="u-container-layout u-container-layout-1">
           <h2 class="u-align-center u-custom-font u-font-montserrat u-text u-text-palette-4-light-1 u-text-1">Membe​rs</h2>
-          <div class="u-shape u-shape-svg u-text-palette-4-light-1 u-shape-1">
-            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 40" style=""><use xlink:href="#svg-9c98"></use></svg>
-            <svg class="u-svg-content" viewBox="0 0 160 40" x="0px" y="0px" id="svg-9c98"><path d="M60,20C60,9.1,69.1,0,80,0s20,9.1,20,20s-9.1,20-20,20S60,30.9,60,20z M0,20C0,9.1,9.1,0,20,0s20,9.1,20,20s-9.1,20-20,20
-	S0,30.9,0,20z M120,20c0-10.9,9.1-20,20-20s20,9.1,20,20s-9.1,20-20,20S120,30.9,120,20z"></path></svg>
-          </div>
-          <div class="u-shape u-shape-svg u-text-palette-4-light-1 u-shape-2">
-            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 48" style=""><use xlink:href="#svg-9251"></use></svg>
-            <svg class="u-svg-content" viewBox="0 0 160 48" x="0px" y="0px" id="svg-9251"><path d="M80,9.6c7.6,0,14.1,6.6,14.1,14.4S87.6,38.4,80,38.4S65.9,31.8,65.9,24S72.4,9.6,80,9.6 M80,0C67.1,0,56.5,10.8,56.5,24
-	S67.1,48,80,48s23.5-10.8,23.5-24S92.9,0,80,0L80,0z M136.5,9.6c7.6,0,14.1,6.6,14.1,14.4s-6.5,14.4-14.1,14.4s-14.1-6.6-14.1-14.4
-	S128.8,9.6,136.5,9.6 M136.5,0c-12.9,0-23.5,10.8-23.5,24s10.6,24,23.5,24c12.9,0,23.5-10.8,23.5-24S149.4,0,136.5,0L136.5,0z
-	 M23.5,9.6c7.6,0,14.1,6.6,14.1,14.4s-6.5,14.4-14.1,14.4S9.4,31.8,9.4,24S15.9,9.6,23.5,9.6 M23.5,0C10.6,0,0,10.8,0,24
-	s10.6,24,23.5,24s23.5-10.8,23.5-24S36.4,0,23.5,0L23.5,0z"></path></svg>
-          </div>
         </div>
       </div>
       <div class="u-list u-list-1">
@@ -194,7 +233,7 @@
                   </p>
                 </div>
               </div>
-              <img class="u-image u-image-circle u-image-1" src="images/VbAEHv3ZpU=.jpeg" alt="" data-image-width="4500" data-image-height="3000">
+              <img class="u-image u-image-circle u-image-1" src="images/members/11.webp" alt="เพลง" data-image-width="4500" data-image-height="3000">
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
@@ -205,7 +244,7 @@
                   </p>
                 </div>
               </div>
-              <img class="u-image u-image-circle u-image-2" src="images/VbAEHv3ZpU=.jpeg" alt="" data-image-width="4500" data-image-height="3000">
+              <img class="u-image u-image-circle u-image-2" src="../images/members/137.jpg" alt="พี" data-image-width="4500" data-image-height="3000">
             </div>
           </div>
         </div>
@@ -220,7 +259,7 @@
                   </p>
                 </div>
               </div>
-              <img class="u-image u-image-circle u-image-3" src="images/VbAEHv3ZpU=.jpeg" alt="" data-image-width="4500" data-image-height="3000">
+              <img class="u-image u-image-circle u-image-3" src="images/members/59.webp" alt="อัน" data-image-width="4500" data-image-height="3000">
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
@@ -231,7 +270,7 @@
                   </p>
                 </div>
               </div>
-              <img class="u-image u-image-circle u-image-4" src="images/VbAEHv3ZpU=.jpeg" alt="" data-image-width="4500" data-image-height="3000">
+<img class="u-image u-image-circle u-image-4" src="images/members/237.webp" alt="เนย" data-image-width="4500" data-image-height="3000">
             </div>
           </div>
         </div>
@@ -239,12 +278,12 @@
       <div class="u-container-style u-expanded-width u-group u-palette-1-dark-2 u-group-6">
         <div class="u-container-layout u-container-layout-10">
           <div class="u-shape u-shape-svg u-text-palette-4-light-1 u-shape-3">
-            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 40" style=""><use xlink:href="#svg-9cf1"></use></svg>
+            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 40"><use xlink:href="#svg-9cf1"></use></svg>
             <svg class="u-svg-content" viewBox="0 0 160 40" x="0px" y="0px" id="svg-9cf1"><path d="M60,20C60,9.1,69.1,0,80,0s20,9.1,20,20s-9.1,20-20,20S60,30.9,60,20z M0,20C0,9.1,9.1,0,20,0s20,9.1,20,20s-9.1,20-20,20
 	S0,30.9,0,20z M120,20c0-10.9,9.1-20,20-20s20,9.1,20,20s-9.1,20-20,20S120,30.9,120,20z"></path></svg>
           </div>
           <div class="u-shape u-shape-svg u-text-palette-4-light-1 u-shape-4">
-            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 48" style=""><use xlink:href="#svg-a0cf"></use></svg>
+            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 48"><use xlink:href="#svg-a0cf"></use></svg>
             <svg class="u-svg-content" viewBox="0 0 160 48" x="0px" y="0px" id="svg-a0cf"><path d="M80,9.6c7.6,0,14.1,6.6,14.1,14.4S87.6,38.4,80,38.4S65.9,31.8,65.9,24S72.4,9.6,80,9.6 M80,0C67.1,0,56.5,10.8,56.5,24
 	S67.1,48,80,48s23.5-10.8,23.5-24S92.9,0,80,0L80,0z M136.5,9.6c7.6,0,14.1,6.6,14.1,14.4s-6.5,14.4-14.1,14.4s-14.1-6.6-14.1-14.4
 	S128.8,9.6,136.5,9.6 M136.5,0c-12.9,0-23.5,10.8-23.5,24s10.6,24,23.5,24c12.9,0,23.5-10.8,23.5-24S149.4,0,136.5,0L136.5,0z
