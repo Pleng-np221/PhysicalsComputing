@@ -14,7 +14,7 @@
 <img src="https://github.com/Pleng-np221/PhysicalsComputing/blob/main/images/projectPosterPNG.png?raw=true" width="1080">
 
 # **PROJECT DEMO VIDEO**
-
+[![demo video](https://img.youtube.com/vi/MzCtRHFwdEM/0.jpg)](https://www.youtube.com/watch?v=MzCtRHFwdEM)
 
 # **อุปกรณ์ที่ใช้**
 | **ลำดับ** | **ชื่ออุปกรณ์** | **รูปภาพ** |
